@@ -1,14 +1,28 @@
 <template>
 	<div class="body">
-		<div class="contacts col-12">
+		<div class="contacts col-12 px-0">
 
-			<yandex-map class="col-sm-6" :coords="mega" @click="onClick">
-		    <ymap-marker :coords="mega" :icon="balloonTemplate" marker-id="1" hint-content="Мега парк"/>
+			<yandex-map class="col-12 col-md-9 mb-2 px-1" zoom="12" :coords="mega" @click="onClick">
+		    <ymap-marker 
+		    	:coords="mega" 
+		    	:icon="balloonTemplate" 
+		    	marker-id="1" 
+		    	:balloon="{header: 'Mega Park Алматы'}"
+		    />
+		    <ymap-marker 
+			    :coords="nurli" 
+			    :icon="markerIcon" 
+			    marker-id="123"
+			  />
 		  </yandex-map>
 
-		  <yandex-map class="col-sm-6" :coords="nurli" @click="onClick">
-		    <ymap-marker marker-id="123" :coords="nurli" :icon="markerIcon"/>
-		  </yandex-map>
+		  <!-- <yandex-map class="col-12 col-sm-6 mb-2 px-1" :coords="nurli" @click="onClick">
+		    <ymap-marker 
+			    :coords="nurli" 
+			    :icon="markerIcon" 
+			    marker-id="123"
+			  />
+		  </yandex-map> -->
 
 		</div>
 	</div>
@@ -20,9 +34,9 @@
 			return {
 				mega: [43.264173, 76.929910],
 				nurli: [43.230582, 76.945995],
-				 balloonTemplate:{
+				balloonTemplate:{
 		      layout: 'default',
-				 	content: 'Мега Парк',
+				 	content: 'Мега парк',
  		      contentOffset: [0, -25],
 		      contentLayout: '<div class="baloon">$[properties.iconContent]</div>'
 		    },
@@ -47,7 +61,7 @@
 </script>
 
 <style lang="scss">
-	@import '@/assets/main.scss';
+	@import '@/assets/scss/colors.scss';
 	section{
 		height: 400px;
 	}

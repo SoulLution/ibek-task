@@ -9,6 +9,9 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'preload', content: '~static/default_avatar.png' },
+      { name: 'preload', content: '~static/1.png' },
+      { name: 'preload', content: '~static/2.png' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
@@ -23,6 +26,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+      { src:'~assets/scss/main.scss', lang: 'scss'}
   ],
   /*
   ** Plugins to load before mounting the App
@@ -44,11 +48,10 @@ module.exports = {
     coordorder: 'latlong',
     version: '2.1'}
     ],
-    // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
   ],
+
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

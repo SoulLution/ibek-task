@@ -1,8 +1,8 @@
 <template>
-  <div class="body col-12">
-    <div class="body-main col-10 p-0">
+  <div class="body">
+    <div class="body-main p-0">
 
-      <div class="body-main-content col-sm-6 pl-0" v-for="(item, i) in content">
+      <div class="body-main-content col-sm-6 pl-0 pr-0 pb-4 pr-sm-4" v-for="(item, i) in content">
         <div class="body-main-content-block block w-100 h-100">
           <div class="body-main-content-block-header w-100">
             <img class="body-main-content-block-header-img" :src=" i % 2 === 0 ? '1.png' : '2.png' ">
@@ -11,20 +11,6 @@
         </div>
       </div>
 
-    </div>
-    <div class="body-side col-2 p-0">
-      <div class="body-side-money block mb-4">
-        <div class="body-side-money-title">Курс обмена валют:</div>
-      </div>
-      <div class="body-side-commercial mb-4 block" v-for="com in commercial">
-        <div class="body-side-commercial-image w-100">
-          <img class="body-side-commercial-image-img" :src="com.img">
-          <div class="body-side-commercial-image-honor w-100"></div>
-        </div>
-        <div class="body-side-commercial-title w-100">{{com.title}}</div>
-        
-      </div>
-      
     </div>
   </div>
 </template>
@@ -76,27 +62,15 @@ export default {
           about: ''
         },
       ],
-      commercial: [
-        {
-          title: 'Кредит Auto',
-          img: 'auto.png',
-          src: '/'
-        },
-        {
-          title: 'Депозиты',
-          img: 'deposit.png',
-          src: '/'
-        }
-      ]
     }
   },
 
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
-  @import '@/assets/main.scss';
+  @import '@/assets/scss/colors.scss';
 
   .block{
     border: 1px solid $white;
@@ -111,9 +85,8 @@ export default {
       align-items: space-between;
       &-content{
         height: 365px;
-        width: 470px;
-        padding-bottom: 30px;
-        padding-right: 30px;
+        // width: 470px;
+        // max-width: calc(100% - 12px);
 
         &-block{
           background-color: $grey_content;
@@ -134,49 +107,6 @@ export default {
 
             }
           }
-        }
-      }
-    }
-    &-side{
-      
-      &-money{
-        background-color: #eaeaea;
-        min-height: 170px;
-        padding: 10px;
-
-        &-title{
-          font-size: 0.9rem;
-          font-weight: bold;
-          color: $grey_font;
-        }
-      }
-      &-commercial{
-        margin-botom: 15px;
-        cursor: pointer;
-        z-index: 1;
-        position: relative;
-
-        &-image{
-          width: 100%;
-
-          &-img{
-            width: 100%;
-            height: 100%;
-          }
-          &-honor{
-            height: 75%;
-            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 51%);
-            position: absolute;
-            top: 0;
-          }
-        }
-        &-title{
-          background-color: $red_link;
-          color: $white;
-          padding: 10px;
-          font-weight: bold;
-          font-size: 0.9rem;
-          z-index: 2;
         }
       }
     }

@@ -1,21 +1,18 @@
-$bg_grey: #dcdddc;
-$bg_main: #e3e3e3;
+@import '@/assets/scss/colors.scss';
 
-$red: #e20e12;
-$red_light: #e3000f;
-$red_hr: #e40e13;
-$red_link: #da0000;
-
-$white: #ffffff;
-$black: #000000;
-
-$grey_font: #4d4d4d;
-$grey_side_bg: #f2f2f2;
-$grey_bg: #dadada;
-$grey_border: #a3a3a3;
-$grey_content: #ebebeb;
-
-
+.page-enter-active, .page-leave-active {
+  transition: 0.3s;
+}
+.page-leave-to {
+  opacity: 0;
+  // margin-left: -50%;
+  // transform: rotateY(-90deg);
+}
+.page-enter{
+  opacity: 0;
+  // margin-left: 50%;
+  // transform: rotateY(-90deg);
+}
 
 .page{
   background-color: $bg_main;
@@ -66,9 +63,9 @@ $grey_content: #ebebeb;
     align-items: space-between;
     &-content{
       min-height: 365px;
-      width: 470px;
+      // width: 470px;
       padding-bottom: 30px;
-      padding-right: 30px;
+      // padding-right: 30px;
 
       &-block{
         background-color: $grey_content;
